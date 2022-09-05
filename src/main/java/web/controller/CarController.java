@@ -19,8 +19,7 @@ public class CarController {
 
     @GetMapping(value = "/cars")
     public String carsList(@RequestParam(value = "count", defaultValue = "5") int count, Model model) {
-        System.out.println("The client passed the value " + count);
-        model.addAttribute("list", cars.carsList(count));
+        model.addAttribute("list", cars.getCars(count));
         return "cars";
     }
 }

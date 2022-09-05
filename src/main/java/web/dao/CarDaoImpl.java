@@ -21,7 +21,7 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public List<Car> getLimitList(int count) {
+    public List<Car> getCarsList(int count) {
         return list.stream().limit(count).collect(Collectors.toList());
     }
 }

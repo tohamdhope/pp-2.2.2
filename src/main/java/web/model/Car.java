@@ -1,5 +1,7 @@
 package web.model;
 
+import java.util.Objects;
+
 public class Car {
     private String brand;
     private String color;
@@ -33,5 +35,17 @@ public class Car {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car car)) return false;
+        return getYear() == car.getYear() && Objects.equals(getBrand(), car.getBrand()) && Objects.equals(getColor(), car.getColor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBrand(), getColor(), getYear());
     }
 }
